@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/script.js"></script>
+    
+    <title>CAGI</title>
+</head>
+<body>
+    <ul id="lista">
+        
+    </ul>
+    
+    <div class="dropdown">
+        <button class="dropbtn">+</button>
+        <div class="dropdown-content">
+            <p onclick="anadir('Poner lavadora 15')" class="subrayar">Poner lavadora 15</p>
+            <p onclick="anadir('Poner la mesa 10')" class="subrayar">Poner la mesa 10 </p>
+            <p onclick="anadir('Pasear a a los perros 15')" class="subrayar">Pasear a a los perros 15</p>
+            <p onclick="anadir('Regar las plantas 10')" class="subrayar">Regar las plantas 10</p>
+            <p onclick="anadir('Hacer la comida 20')" class="subrayar">Hacer la comida 20</p>
+        </div>
+  
+</body>
+
+<script>
+    function anadir(item){
+
+let l = document.getElementById("lista");
+let el = document.createElement("li");
+el.textContent = item;
+l.append(el);
+}
+function eliminar(){
+   let Element = document.createElement("l")
+   Element.id = e[0]
+   Element.textContent = e[1]
+    Element.addEventListener("click", function(){
+        let localitzacioElement = ref(baseDades, `tareas/${e[0]}`)
+        remove(localitzacioElement)
+    })
+    lista.append(Element)
+}
+</script>
+
+</html>

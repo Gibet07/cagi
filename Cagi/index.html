@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script type="module" src="./js/script.js"></script>
+   
     
     <title>CAGI</title>
 </head>
 <body>
     <ul id="lista">
-        
     </ul>
-    
+
     <div class="dropdown">
         <button class="dropbtn">+</button>
         <div class="dropdown-content">
@@ -26,22 +25,30 @@
 </body>
 
 <script>
-    function anadir(item){
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
+const boto = document.getElementById("lista")
+
+const appSettings = {
+    databaseURL: "https://lista-tareas-95970-default-rtdb.europe-west1.firebasedatabase.app/"
+}
+const app = initializeApp(appSettings);
+const baseDades = getDatabase(app);
+const tasks = ref(baseDades, "tareas");
+
+boto.addEventListener("click", function() {
+      push (tasks);
+}) 
+
+    function anadir(item){
 let l = document.getElementById("lista");
 let el = document.createElement("li");
 el.textContent = item;
+el.addEventListener("click",function(){
+    el.remove()
+})
 l.append(el);
-}
-function eliminar(){
-   let Element = document.createElement("l")
-   Element.id = e[0]
-   Element.textContent = e[1]
-    Element.addEventListener("click", function(){
-        let localitzacioElement = ref(baseDades, `tareas/${e[0]}`)
-        remove(localitzacioElement)
-    })
-    lista.append(Element)
 }
 </script>
 

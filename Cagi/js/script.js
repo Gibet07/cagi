@@ -14,7 +14,6 @@ const app = initializeApp(appSettings);
 const baseDades = getDatabase(app);
 const tasks = ref(baseDades, "tareas");
 
-
 /*
 boto.addEventListener("click", function(){
     push(tasks);

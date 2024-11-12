@@ -1,4 +1,59 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
+const boto = document.getElementById("lista")
+
+const appSettings = {
+    databaseURL: "https://lista-tareas-95970-default-rtdb.europe-west1.firebasedatabase.app/"
+}
+
+const app = initializeApp(appSettings);
+const baseDades = getDatabase(app);
+const tasks = ref(baseDades, "TAREAS");
+/*
+
+function anadir(item){
+let l = document.getElementById("lista");
+let el = document.createElement("li");
+el.textContent = item;
+el.addEventListener("click",function(){
+    el.remove()
+})
+l.append(el);
+addElement()
+}
+*/
+function addElement(e) {
+    console.log(e)
+    for (let i = 1; i < e.length; i++) {
+        let lista = document.getElementById("lista")
+
+        let elementLlista = document.createElement("li");
+        elementLlista.id = e[i][2]
+        elementLlista.textContent = e[i][1];
+    
+        lista.appendChild(elementLlista)
+    }
+    
+
+}
+
+onValue(tasks, function (snapshot) {
+    if(snapshot.exists()){
+        let resultats = Object.entries(snapshot.val())
+
+    for (let i = 0; i < resultats.length; i++) {
+        addElement(resultats[i]);
+    }
+    }else{
+        lista.innerHTML = "Añade tareas"
+    }
+}) 
+
+
+
+
+/*
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
@@ -14,7 +69,7 @@ const app = initializeApp(appSettings);
 const baseDades = getDatabase(app);
 const tasks = ref(baseDades, "tareas");
 
-/*
+
 boto.addEventListener("click", function(){
     push(tasks);
 })

@@ -1,11 +1,12 @@
 
 .dropbtn {
-    background-color: #3498DB;
+    background-color:#949393;
     color: white;
-    padding: 16px;
+    padding: 22px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+    width: 700px;
   }
   
   /* The container <div> - needed to position the dropdown content */
@@ -20,7 +21,6 @@
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   
@@ -32,8 +32,8 @@
     display: block;
   }
 
-  .subrayar:hover{
-    background-color: #817f7f;
+  #tareas:hover{
+    background-color:rgb(171, 168, 168);
   }
   /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -45,10 +45,22 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color:#C4B5EA;
 }
 
 .show{
   display: block;
 }
 
+body{
+  padding-top: 25em;
+  text-align: center;
+  background-color: #897383;
+}
+#tareas{
+  width: 700px
+}
+
+li{
+  margin-bottom: 20px;
+}

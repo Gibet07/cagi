@@ -1,66 +1,87 @@
-
 .dropbtn {
-    background-color:#949393;
-    color: white;
-    padding: 22px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 700px;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
+  background-color: #bdbdbd;
+  color: #8e7788;
+  padding: 22px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 700px;
+}
 
-  #tareas:hover{
-    background-color:rgb(171, 168, 168);
-  }
-  /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-/* Show the dropdown menu on hover */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+#tareas:hover {
+  background-color: rgb(171, 168, 168);
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color:#C4B5EA;
+  background-color: #cabfe7;
 }
 
-.show{
+.show {
   display: block;
 }
 
-body{
+body {
   padding-top: 25em;
   text-align: center;
-  background-color: #897383;
+  background-color: #8e7788;
+  font-family: "Vollkorn", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
-#tareas{
+
+#tareas {
   width: 700px
 }
 
-li{
-  margin-bottom: 20px;
+li {
+  margin-bottom: 8px;
+ 
+
+}
+
+@media (min-width: 800px){
+  .usuarios{
+      display: flex;
+      max-width: 2000px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .usuario + .usuario{
+      margin-left: 2em;
+  }
+
+  .titol-usuarios{
+     margin-top: 5em; 
+  }
+}
+
+#fetes:hover{
+  text-decoration:line-through;
 }
